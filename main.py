@@ -23,6 +23,6 @@ while run:
     player.update()
 
     if not(line1 or line2 or line3):
-        generate_next()
+        add_random_obstacles()
 
 pygame.quit()

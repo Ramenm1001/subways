@@ -1,4 +1,5 @@
 import pygame
+from main import win
 
 class Player(pygame.sprite.Sprite):
     def __init__(self, win):
@@ -20,13 +21,11 @@ class Player(pygame.sprite.Sprite):
                 self.frames.append(sheet.subsurface(pygame.Rect(
                     frame_location, self.rect.size)))
 
-    def update(self, where):
-        if where == 'top':
+    def update(self):
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_a]:
             if self.line != 1:
                 self.line -= 1
-        elif self.line != 3:
-            self.line += 1
-
-        self.rect = pygame.Rect(0, 0, self.dict[self.line])
-
-
+        elif keys[pygame.K_d]:
+            if self.line != 3:
+                self.line += 1

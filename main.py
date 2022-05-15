@@ -1,16 +1,28 @@
-# This is a sample Python script.
+import pygame
+from Obstacles import Obstacle
+from Player import Player
+from generation_loc import generate_next
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+WIDTH, HEIGHT = 500, 500
+win = pygame.display.set_mode((WIDTH, HEIGHT))
 
+line1 = pygame.sprite.Group()
+line2 = pygame.sprite.Group()
+line3 = pygame.sprite.Group()
+player = Player()
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+run = True
+while run:
+    for eve in pygame.event.get():
+        if eve.type == pygame.QUIT:
+            run = False
 
+    line1.update()
+    line2.update()
+    line3.update()
+    player.update()
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+    if not(line1 or line2 or line3):
+        generate_next()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+pygame.quit()

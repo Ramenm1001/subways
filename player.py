@@ -9,6 +9,7 @@ class Player(pygame.sprite.Sprite):
         self.cut_sheet(self.sheet, 5, 2)
         self.cur_frame = 0
         self.image = self.frames[self.cur_frame]
+        self.dict = {}
 
     def cut_sheet(self, sheet, columns, rows):
         self.rect = pygame.Rect(0, 0, self.sheet.get_width() // columns,

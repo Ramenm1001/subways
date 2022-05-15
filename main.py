@@ -1,6 +1,6 @@
 import pygame
 from Obstacles import Obstacle
-from Player import Player
+from player import Player
 from generation_loc import add_random_obstacles
 
 WIDTH, HEIGHT = 500, 500
@@ -9,7 +9,7 @@ win = pygame.display.set_mode((WIDTH, HEIGHT))
 line1 = pygame.sprite.Group()
 line2 = pygame.sprite.Group()
 line3 = pygame.sprite.Group()
-player = Player()
+player = Player(win)
 
 run = True
 while run:

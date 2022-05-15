@@ -1,4 +1,5 @@
 import pygame
+
 from Obstacles import Obstacle
 from player import Player
 from generation_loc import add_random_obstacles
@@ -23,6 +24,6 @@ while run:
     player.update()
 
     if not(line1 or line2 or line3):
-        add_random_obstacles()
+        add_random_obstacles(win)
 
 pygame.quit()

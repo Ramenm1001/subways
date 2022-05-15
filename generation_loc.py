@@ -1,6 +1,5 @@
 from random import randint, sample
 from Obstacles import Obstacle
-from main import win
 
 
 def generate_next():
@@ -16,7 +15,7 @@ def generate_speed():
     return randint(1, 5)
 
 
-def add_random_obstacles(speed=None, sprite=None):
+def add_random_obstacles(win, speed=None, sprite=None):
     if sprite is None:
         sprite = get_sprite()
     if speed is None:

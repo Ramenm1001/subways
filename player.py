@@ -30,3 +30,7 @@ class Player(pygame.sprite.Sprite):
             if self.line != 3:
                 self.line -= 1
         self.rect = pygame.Rect(0, 0, self.dict[self.line])
+        self.draw()
+
+    def draw(self):
+        self.win.blit(self.image, (self.rect.x, self.rect.y))

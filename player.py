@@ -9,8 +9,10 @@ class Player(pygame.sprite.Sprite):
         self.sheet = pygame.image.load('sprites/player.png')
         self.cut_sheet(self.sheet, 5, 2)
         self.cur_frame = 0
-        self.image = self.frames[self.cur_frame]
         self.dict = {1: (100, 100), 2: (100, 300), 3: (100, 500)}
+        self.rect.x, self.rect.y = self.dict[self.line]
+        self.image = self.frames[self.cur_frame]
+
 
     def cut_sheet(self, sheet, columns, rows):
         self.rect = pygame.Rect(0, 0, self.sheet.get_width() // columns,
@@ -29,3 +31,8 @@ class Player(pygame.sprite.Sprite):
         elif keys[pygame.K_d]:
             if self.line != 3:
                 self.line += 1
+        self.rect = pygame.Rect(0, 0, self.dict[self.line])
+        self.draw()
+
+    def draw(self):
+        self.win.blit(self.image, (self.rect.x, self.rect.y))

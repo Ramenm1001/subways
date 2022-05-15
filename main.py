@@ -1,7 +1,7 @@
 import pygame
 from Obstacles import Obstacle
 from Player import Player
-from generation_loc import generate_next
+from generation_loc import add_random_obstacles
 
 WIDTH, HEIGHT = 500, 500
 win = pygame.display.set_mode((WIDTH, HEIGHT))

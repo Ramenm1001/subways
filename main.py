@@ -9,7 +9,7 @@ win = pygame.display.set_mode((WIDTH, HEIGHT))
 line1 = pygame.sprite.Group()
 line2 = pygame.sprite.Group()
 line3 = pygame.sprite.Group()
-player = Player()
+player = Player(win)
 
 run = True
 while run:

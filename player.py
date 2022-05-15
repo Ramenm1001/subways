@@ -28,4 +28,5 @@ class Player(pygame.sprite.Sprite):
                 self.line -= 1
         elif keys[pygame.K_d]:
             if self.line != 3:
-                self.line += 1
+                self.line -= 1
+        self.rect = pygame.Rect(0, 0, self.dict[self.line])

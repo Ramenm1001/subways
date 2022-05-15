@@ -1,6 +1,6 @@
 import pygame
 from Obstacles import Obstacle
-from Player import Player
+from player import Player
 from generation_loc import add_random_obstacles
 
 WIDTH, HEIGHT = 500, 500

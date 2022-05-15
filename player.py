@@ -1,8 +1,8 @@
 import pygame
-from main import win
 
 class Player(pygame.sprite.Sprite):
-    def __init__(self, win):
+    def __init__(self, win, *groups):
+        super().__init__(*groups)
         self.line = 2
         self.win = win
         self.frames = []
@@ -31,7 +31,7 @@ class Player(pygame.sprite.Sprite):
         elif keys[pygame.K_d]:
             if self.line != 3:
                 self.line += 1
-        self.rect = pygame.Rect(0, 0, self.dict[self.line])
+        self.rect = pygame.Rect(0, 0, *self.dict[self.line])
         self.draw()
 
     def draw(self):

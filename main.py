@@ -2,7 +2,7 @@ import pygame
 
 from Obstacles import Obstacle
 from player import Player
-from generation_loc import add_random_obstacles
+from generation_loc import LocationGenerate
 
 WIDTH, HEIGHT = 500, 500
 win = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -11,6 +11,7 @@ line1 = pygame.sprite.Group()
 line2 = pygame.sprite.Group()
 line3 = pygame.sprite.Group()
 player = Player(win)
+generation = LocationGenerate(win, (line1, line2, line3))
 
 run = True
 while run:
@@ -24,6 +25,6 @@ while run:
     player.update()
 
     if not(line1 or line2 or line3):
-        add_random_obstacles(win)
+        generation.add_random_obstacles()
 
 pygame.quit()

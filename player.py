@@ -9,7 +9,7 @@ class Player(pygame.sprite.Sprite):
         self.cut_sheet(self.sheet, 5, 2)
         self.cur_frame = 0
         self.image = self.frames[self.cur_frame]
-        self.dict = {}
+        self.dict = {1: (100, 100), 2: (100, 300), 3: (100, 500)}
 
     def cut_sheet(self, sheet, columns, rows):
         self.rect = pygame.Rect(0, 0, self.sheet.get_width() // columns,
@@ -26,5 +26,7 @@ class Player(pygame.sprite.Sprite):
                 self.line -= 1
         elif self.line != 3:
             self.line += 1
+
+        self.rect = pygame.Rect(0, 0, self.dict[self.line])
 
 
